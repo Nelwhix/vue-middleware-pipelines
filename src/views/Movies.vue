@@ -4,6 +4,6 @@
 
 <template>
     <div>
-        <p>This is the Movies component for authenticated and subscribed users</p>
+        <p>Omo I don tire</p>
     </div>
 </template>
