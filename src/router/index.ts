@@ -20,14 +20,6 @@ const router = createRouter({
       name: 'login',
       component: Login,
       meta: { requiresAuth: false, requiresSub: false},
-      // beforeEnter: (to, from) => {
-      //   const appstore = useAppStore()
-      //   if (appstore.user.loggedIn) {
-      //     return {
-      //       path: '/dashboard'
-      //     }
-      //   }
-      // }
     },
     {
       path: '/dashboard',
@@ -54,6 +46,19 @@ router.beforeEach((to, from) => {
       query: { redirect: to.fullPath}
     }
   }
+  if (to.name == "login" && appstore.user.loggedIn) {
+    return {
+      path: '/dashboard',
+      query: { redirect: to.fullPath}
+    }
+  }
+  if (to.meta.requiresAuth && to.meta.requiresSub && !appstore.user.isSubscribed) {
+    return {
+      path: '/dashboard',
+      query: { redirect: to.fullPath
+    }
+  }
+}
 })
 
 export default router

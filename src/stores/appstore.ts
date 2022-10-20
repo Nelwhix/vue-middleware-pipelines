@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 export const useAppStore = defineStore('appstore', () => {
   const user = reactive({
     loggedIn: true,
-    isSubscribed: true  
+    isSubscribed: true
   })
   return { user }
 })

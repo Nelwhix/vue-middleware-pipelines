@@ -4,6 +4,6 @@
 
 <template>
     <div>
-        <p>Omo I don tire</p>
+        <p>This is the movie component</p>
     </div>
 </template>
