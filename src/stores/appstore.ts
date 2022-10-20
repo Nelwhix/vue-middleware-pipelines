@@ -1,4 +1,4 @@
-import { computed, reactive } from 'vue'
+import { reactive } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('appstore', () => {

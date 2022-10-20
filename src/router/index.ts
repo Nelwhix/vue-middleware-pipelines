@@ -46,14 +46,14 @@ const router = createRouter({
   ]
 })
 
-// router.beforeEach((to, from) => {
-//   const appstore = useAppStore()
-//   if (to.meta.requiresAuth && !appstore.user.loggedIn) {
-//     return {
-//       path: '/login',
-//       query: { redirect: to.fullPath}
-//     }
-//   }
-// })
+router.beforeEach((to, from) => {
+  const appstore = useAppStore()
+  if (to.meta.requiresAuth && !appstore.user.loggedIn) {
+    return {
+      path: '/login',
+      query: { redirect: to.fullPath}
+    }
+  }
+})
 
 export default router
